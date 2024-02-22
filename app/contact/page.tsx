@@ -1,27 +1,27 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 
 const socials = [
 	{
-		icon: <Twitter size={20} />,
-		href: "https://twitter.com/chronark_",
-		label: "Twitter",
-		handle: "@chronark_",
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/mohamed-tamer-020a5221a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BU4AlTteSTOas%2B1OskAUqNA%3D%3D",
+		label: "LinkedIn",
+		handle: "Mohamed Tamer",
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:dev@chronark.com",
+		href: "mailto:mohamedtamer200200@gmail.com",
 		label: "Email",
-		handle: "dev@chronark.com",
+		handle: "MohamedTamer.com",
 	},
 	{
 		icon: <Github size={20} />,
-		href: "https://github.com/chronark",
+		href: "https://github.com/MooTamer",
 		label: "Github",
-		handle: "chronark",
+		handle: "MooTamer",
 	},
 ];
 
