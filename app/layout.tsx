@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     description:
       "Bringing your ideas to life, beautifully.",
     url: "https://mohamedtamer.live",
-    siteName: "mohamedtamer.com",
+    siteName: "mohamedtamer.live",
     images: [
       {
-        url: "https://chronak.com/og.png",
+        url: "https://chronark.com/og.png",
         width: 1920,
         height: 1080,
       },
