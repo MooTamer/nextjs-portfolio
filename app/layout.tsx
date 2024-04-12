@@ -7,18 +7,18 @@ import { Analytics } from "./components/analytics";
 export const metadata: Metadata = {
   title: {
     default: "MohamedTamer.com",
-    template: "%s | chronark.com",
+    template: "%s | mohamedtamer.com",
   },
   description: "Exploring Frontend Horizons, Harnessing Backend Potentials",
   openGraph: {
     title: "MohamedTamer.com",
     description:
       "Exploring Frontend Horizons, Harnessing Backend Potentials",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    url: "https://mohamedtamer.com",
+    siteName: "mohamedtamer.com",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://mohamedtamer.com/og.png",
         width: 1920,
         height: 1080,
       },
