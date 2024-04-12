@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "MohamedTamer.com",
+    title: "MohamedTamer.live",
     card: "summary_large_image",
   },
   icons: {
