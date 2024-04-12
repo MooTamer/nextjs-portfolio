@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description: "Bringing your ideas to life, beautifully.",
   openGraph: {
-    title: "MohamedTamer.com",
+    title: "MohamedTamer.live",
     description:
       "Bringing your ideas to life, beautifully.",
     url: "https://mohamedtamer.live",
