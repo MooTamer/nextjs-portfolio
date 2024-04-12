@@ -6,15 +6,15 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "MohamedTamer.com",
-    template: "%s | mohamedtamer.com",
+    default: "MohamedTamer.live",
+    template: "%s | mohamedtamer.live",
   },
   description: "Bringing your ideas to life, beautifully.",
   openGraph: {
     title: "MohamedTamer.com",
     description:
       "Bringing your ideas to life, beautifully.",
-    url: "https://mohamedtamer.com",
+    url: "https://mohamedtamer.live",
     siteName: "mohamedtamer.com",
     images: [
       {
