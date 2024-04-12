@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     default: "MohamedTamer.com",
     template: "%s | mohamedtamer.com",
   },
-  description: "Exploring Frontend Horizons, Harnessing Backend Potentials",
+  description: "Bringing your ideas to life, beautifully.",
   openGraph: {
     title: "MohamedTamer.com",
     description:
-      "Exploring Frontend Horizons, Harnessing Backend Potentials",
+      "Bringing your ideas to life, beautifully.",
     url: "https://mohamedtamer.com",
     siteName: "mohamedtamer.com",
     images: [
