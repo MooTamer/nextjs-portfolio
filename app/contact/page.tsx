@@ -1,10 +1,16 @@
 "use client";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 
 const socials = [
+  {
+    icon: <FileText size={20} />,
+    href: "https://drive.google.com/file/d/1_XljPXb1XeZte3mwAA7TRqmlG57Hdvzt/view?usp=sharing", 
+    label: "Resume",
+    handle: "Mohamed Tamer", 
+  },
   {
     icon: <Linkedin size={20} />,
     href: "https://www.linkedin.com/in/mohamed-tamer-020a5221a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BU4AlTteSTOas%2B1OskAUqNA%3D%3D",
@@ -15,7 +21,7 @@ const socials = [
     icon: <Mail size={20} />,
     href: "mailto:mohamedtamer200200@gmail.com",
     label: "Email",
-    handle: "MohamedTamer.live",
+    handle: "Gmail",
   },
   {
     icon: <Github size={20} />,
