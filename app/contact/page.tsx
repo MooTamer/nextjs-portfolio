@@ -7,7 +7,7 @@ import { Card } from "../components/card";
 const socials = [
   {
     icon: <FileText size={20} />,
-    href: "https://drive.google.com/file/d/1JS79xtqeO5QsOB3migfg2IzHio-iAiNU/view?usp=sharing", 
+    href: "https://drive.google.com/file/d/1WsFf0n6udmpS-246j-avFpUFxCN7zPgi/view?usp=sharing", 
     label: "Resume",
     handle: "Mohamed Tamer", 
   },
