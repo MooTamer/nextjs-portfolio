@@ -45,7 +45,8 @@ export const Project = defineDocumentType(() => ({
     stack: {
       type: "list",
       of: { type: "string" },
-      required: true, 
+      required: true,
+      default: [],
     },
   },
   computedFields,
