@@ -31,6 +31,16 @@ export const Article: React.FC<Props> = ({ project, views }) => {
         <h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
           {project.title}
         </h2>
+        <p className="mt-2 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+          {project.stack.map((tech) => (
+            <span
+              key={tech}
+              className="mr-2 inline-block bg-zinc-800 text-xs xl:text-base text-zinc-100 px-2 py-1 rounded-lg"
+            >
+              {tech}
+            </span>
+          ))}
+        </p>
         <p className="z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200">
           {project.description}
         </p>

@@ -20,9 +20,10 @@ export default async function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
 
-  const featured = {
+  const StudentGuide = {
     published: true,
     title: "Student Guide",
+    stack: ["HTML", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
     description:
       "Streamline university data management with elegance. Access all essential information effortlessly, prioritizing security and speed for smoother academic navigation.",
     date: "2024-02-02",
@@ -31,9 +32,10 @@ export default async function ProjectsPage() {
 
     slug: "StudentGuide",
   };
-  const top2: Project = {
+  const DeskMate: Project = {
     published: true,
     title: "Desk Mate",
+    stack: ["MERN"],
     description:
       "Desk Mate, a Unique Help Desk Software powered by MERN stack and Tailwind CSS, streamlines support with a robust ticketing system, AI chatbot, brand customization and strong security measures.It's a PaaS solution for businesses to manage their customer support, with a robust ticketing system, AI chatbot, brand customization, and strong security measures.  ",
     date: "2023-09-10",
@@ -56,9 +58,36 @@ export default async function ProjectsPage() {
     slug: "Staff-Help-Desk",
   };
 
-  const top4: Project = {
+  const PalletePro: Project = {
+    published: true,
+    title: "Pallete Pro",
+    stack: ["Next.js", "Tailwind CSS", "Nest.js", "MongoDB", "Docker", "Kafka"],
+    description:
+      "Create an efficient and user-friendly application for managing and accessing information about the Cairo Metro, serving the extensive rapid transit system in the city of Cairo, Egypt.",
+    date: "2024-02-02T00:00:00.000Z",
+    url: "https://github.com/MooTamer/pallet-pro",
+    repository: "https://github.com/MooTamer/pallet-pro",
+    body: {
+      raw: "\r\n\r\n[![](https://i.ibb.co/1R7d16z/cairo.png)](https://help-desk.ahmed-yehia.me)\r\n\r\n# Cairo Metro is a client-server application that simulates the Cairo Metro system. It is built using PERN stack. The application allows users to view the metro lines, stations, and the shortest path between two stations. It also provides a search feature to find the shortest path between two stations using Floyd Warshall algorithm.It provides admins with semless and comprehensive management of the metro lines, stations, and users. It also provides a dashboard to view the statistics of the users and the most used stations\r\n",
+      code: 'var Component=(()=>{var sr=Object.create;var F=Object.defineProperty;var lr=Object.getOwnPropertyDescriptor;var fr=Object.getOwnPropertyNames;var cr=Object.getPrototypeOf,dr=Object.prototype.hasOwnProperty;var B=(l,o)=>()=>(o||l((o={exports:{}}).exports,o),o.exports),vr=(l,o)=>{for(var b in o)F(l,b,{get:o[b],enumerable:!0})},Ee=(l,o,b,y)=>{if(o&&typeof o=="object"||typeof o=="function")for(let _ of fr(o))!dr.call(l,_)&&_!==b&&F(l,_,{get:()=>o[_],enumerable:!(y=lr(o,_))||y.enumerable});return l};var mr=(l,o,b)=>(b=l!=null?sr(cr(l)):{},Ee(o||!l||!l.__esModule?F(b,"default",{value:l,enumerable:!0}):b,l)),pr=l=>Ee(F({},"__esModule",{value:!0}),l);var Ce=B((Er,Re)=>{Re.exports=React});var Te=B(z=>{"use strict";(function(){"use strict";var l=Ce(),o=Symbol.for("react.element"),b=Symbol.for("react.portal"),y=Symbol.for("react.fragment"),_=Symbol.for("react.strict_mode"),q=Symbol.for("react.profiler"),X=Symbol.for("react.provider"),K=Symbol.for("react.context"),w=Symbol.for("react.forward_ref"),A=Symbol.for("react.suspense"),I=Symbol.for("react.suspense_list"),j=Symbol.for("react.memo"),U=Symbol.for("react.lazy"),je=Symbol.for("react.offscreen"),J=Symbol.iterator,Oe="@@iterator";function Pe(e){if(e===null||typeof e!="object")return null;var r=J&&e[J]||e[Oe];return typeof r=="function"?r:null}var R=l.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;function d(e){{for(var r=arguments.length,t=new Array(r>1?r-1:0),n=1;n<r;n++)t[n-1]=arguments[n];De("error",e,t)}}function De(e,r,t){{var n=R.ReactDebugCurrentFrame,u=n.getStackAddendum();u!==""&&(r+="%s",t=t.concat([u]));var s=t.map(function(i){return String(i)});s.unshift("Warning: "+r),Function.prototype.apply.call(console[e],console,s)}}var ke=!1,Ne=!1,Fe=!1,Ae=!1,Ie=!1,Z;Z=Symbol.for("react.module.reference");function Ue(e){return!!(typeof e=="string"||typeof e=="function"||e===y||e===q||Ie||e===_||e===A||e===I||Ae||e===je||ke||Ne||Fe||typeof e=="object"&&e!==null&&(e.$$typeof===U||e.$$typeof===j||e.$$typeof===X||e.$$typeof===K||e.$$typeof===w||e.$$typeof===Z||e.getModuleId!==void 0))}function Ge(e,r,t){var n=e.displayName;if(n)return n;var u=r.displayName||r.name||"";return u!==""?t+"("+u+")":t}function Q(e){return e.displayName||"Context"}function h(e){if(e==null)return null;if(typeof e.tag=="number"&&d("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."),typeof e=="function")return e.displayName||e.name||null;if(typeof e=="string")return e;switch(e){case y:return"Fragment";case b:return"Portal";case q:return"Profiler";case _:return"StrictMode";case A:return"Suspense";case I:return"SuspenseList"}if(typeof e=="object")switch(e.$$typeof){case K:var r=e;return Q(r)+".Consumer";case X:var t=e;return Q(t._context)+".Provider";case w:return Ge(e,e.render,"ForwardRef");case j:var n=e.displayName||null;return n!==null?n:h(e.type)||"Memo";case U:{var u=e,s=u._payload,i=u._init;try{return h(i(s))}catch{return null}}}return null}var E=Object.assign,x=0,ee,re,te,ne,ae,ie,oe;function ue(){}ue.__reactDisabledLog=!0;function Ye(){{if(x===0){ee=console.log,re=console.info,te=console.warn,ne=console.error,ae=console.group,ie=console.groupCollapsed,oe=console.groupEnd;var e={configurable:!0,enumerable:!0,value:ue,writable:!0};Object.defineProperties(console,{info:e,log:e,warn:e,error:e,group:e,groupCollapsed:e,groupEnd:e})}x++}}function $e(){{if(x--,x===0){var e={configurable:!0,enumerable:!0,writable:!0};Object.defineProperties(console,{log:E({},e,{value:ee}),info:E({},e,{value:re}),warn:E({},e,{value:te}),error:E({},e,{value:ne}),group:E({},e,{value:ae}),groupCollapsed:E({},e,{value:ie}),groupEnd:E({},e,{value:oe})})}x<0&&d("disabledDepth fell below zero. This is a bug in React. Please file an issue.")}}var G=R.ReactCurrentDispatcher,Y;function O(e,r,t){{if(Y===void 0)try{throw Error()}catch(u){var n=u.stack.trim().match(/\\n( *(at )?)/);Y=n&&n[1]||""}return`\n`+Y+e}}var $=!1,P;{var We=typeof WeakMap=="function"?WeakMap:Map;P=new We}function se(e,r){if(!e||$)return"";{var t=P.get(e);if(t!==void 0)return t}var n;$=!0;var u=Error.prepareStackTrace;Error.prepareStackTrace=void 0;var s;s=G.current,G.current=null,Ye();try{if(r){var i=function(){throw Error()};if(Object.defineProperty(i.prototype,"props",{set:function(){throw Error()}}),typeof Reflect=="object"&&Reflect.construct){try{Reflect.construct(i,[])}catch(g){n=g}Reflect.construct(e,[],i)}else{try{i.call()}catch(g){n=g}e.call(i.prototype)}}else{try{throw Error()}catch(g){n=g}e()}}catch(g){if(g&&n&&typeof g.stack=="string"){for(var a=g.stack.split(`\n`),v=n.stack.split(`\n`),f=a.length-1,c=v.length-1;f>=1&&c>=0&&a[f]!==v[c];)c--;for(;f>=1&&c>=0;f--,c--)if(a[f]!==v[c]){if(f!==1||c!==1)do if(f--,c--,c<0||a[f]!==v[c]){var p=`\n`+a[f].replace(" at new "," at ");return e.displayName&&p.includes("<anonymous>")&&(p=p.replace("<anonymous>",e.displayName)),typeof e=="function"&&P.set(e,p),p}while(f>=1&&c>=0);break}}}finally{$=!1,G.current=s,$e(),Error.prepareStackTrace=u}var T=e?e.displayName||e.name:"",ye=T?O(T):"";return typeof e=="function"&&P.set(e,ye),ye}function Me(e,r,t){return se(e,!1)}function Ve(e){var r=e.prototype;return!!(r&&r.isReactComponent)}function D(e,r,t){if(e==null)return"";if(typeof e=="function")return se(e,Ve(e));if(typeof e=="string")return O(e);switch(e){case A:return O("Suspense");case I:return O("SuspenseList")}if(typeof e=="object")switch(e.$$typeof){case w:return Me(e.render);case j:return D(e.type,r,t);case U:{var n=e,u=n._payload,s=n._init;try{return D(s(u),r,t)}catch{}}}return""}var k=Object.prototype.hasOwnProperty,le={},fe=R.ReactDebugCurrentFrame;function N(e){if(e){var r=e._owner,t=D(e.type,e._source,r?r.type:null);fe.setExtraStackFrame(t)}else fe.setExtraStackFrame(null)}function Le(e,r,t,n,u){{var s=Function.call.bind(k);for(var i in e)if(s(e,i)){var a=void 0;try{if(typeof e[i]!="function"){var v=Error((n||"React class")+": "+t+" type `"+i+"` is invalid; it must be a function, usually from the `prop-types` package, but received `"+typeof e[i]+"`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");throw v.name="Invariant Violation",v}a=e[i](r,i,n,t,null,"SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED")}catch(f){a=f}a&&!(a instanceof Error)&&(N(u),d("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).",n||"React class",t,i,typeof a),N(null)),a instanceof Error&&!(a.message in le)&&(le[a.message]=!0,N(u),d("Failed %s type: %s",t,a.message),N(null))}}}var He=Array.isArray;function W(e){return He(e)}function Be(e){{var r=typeof Symbol=="function"&&Symbol.toStringTag,t=r&&e[Symbol.toStringTag]||e.constructor.name||"Object";return t}}function ze(e){try{return ce(e),!1}catch{return!0}}function ce(e){return""+e}function de(e){if(ze(e))return d("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.",Be(e)),ce(e)}var S=R.ReactCurrentOwner,qe={key:!0,ref:!0,__self:!0,__source:!0},ve,me,M;M={};function Xe(e){if(k.call(e,"ref")){var r=Object.getOwnPropertyDescriptor(e,"ref").get;if(r&&r.isReactWarning)return!1}return e.ref!==void 0}function Ke(e){if(k.call(e,"key")){var r=Object.getOwnPropertyDescriptor(e,"key").get;if(r&&r.isReactWarning)return!1}return e.key!==void 0}function Je(e,r){if(typeof e.ref=="string"&&S.current&&r&&S.current.stateNode!==r){var t=h(S.current.type);M[t]||(d(\'Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref\',h(S.current.type),e.ref),M[t]=!0)}}function Ze(e,r){{var t=function(){ve||(ve=!0,d("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",r))};t.isReactWarning=!0,Object.defineProperty(e,"key",{get:t,configurable:!0})}}function Qe(e,r){{var t=function(){me||(me=!0,d("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",r))};t.isReactWarning=!0,Object.defineProperty(e,"ref",{get:t,configurable:!0})}}var er=function(e,r,t,n,u,s,i){var a={$$typeof:o,type:e,key:r,ref:t,props:i,_owner:s};return a._store={},Object.defineProperty(a._store,"validated",{configurable:!1,enumerable:!1,writable:!0,value:!1}),Object.defineProperty(a,"_self",{configurable:!1,enumerable:!1,writable:!1,value:n}),Object.defineProperty(a,"_source",{configurable:!1,enumerable:!1,writable:!1,value:u}),Object.freeze&&(Object.freeze(a.props),Object.freeze(a)),a};function rr(e,r,t,n,u){{var s,i={},a=null,v=null;t!==void 0&&(de(t),a=""+t),Ke(r)&&(de(r.key),a=""+r.key),Xe(r)&&(v=r.ref,Je(r,u));for(s in r)k.call(r,s)&&!qe.hasOwnProperty(s)&&(i[s]=r[s]);if(e&&e.defaultProps){var f=e.defaultProps;for(s in f)i[s]===void 0&&(i[s]=f[s])}if(a||v){var c=typeof e=="function"?e.displayName||e.name||"Unknown":e;a&&Ze(i,c),v&&Qe(i,c)}return er(e,a,v,u,n,S.current,i)}}var V=R.ReactCurrentOwner,pe=R.ReactDebugCurrentFrame;function C(e){if(e){var r=e._owner,t=D(e.type,e._source,r?r.type:null);pe.setExtraStackFrame(t)}else pe.setExtraStackFrame(null)}var L;L=!1;function H(e){return typeof e=="object"&&e!==null&&e.$$typeof===o}function be(){{if(V.current){var e=h(V.current.type);if(e)return`\n\nCheck the render method of \\``+e+"`."}return""}}function tr(e){{if(e!==void 0){var r=e.fileName.replace(/^.*[\\\\\\/]/,""),t=e.lineNumber;return`\n\nCheck your code at `+r+":"+t+"."}return""}}var he={};function nr(e){{var r=be();if(!r){var t=typeof e=="string"?e:e.displayName||e.name;t&&(r=`\n\nCheck the top-level render call using <`+t+">.")}return r}}function ge(e,r){{if(!e._store||e._store.validated||e.key!=null)return;e._store.validated=!0;var t=nr(r);if(he[t])return;he[t]=!0;var n="";e&&e._owner&&e._owner!==V.current&&(n=" It was passed a child from "+h(e._owner.type)+"."),C(e),d(\'Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.\',t,n),C(null)}}function _e(e,r){{if(typeof e!="object")return;if(W(e))for(var t=0;t<e.length;t++){var n=e[t];H(n)&&ge(n,r)}else if(H(e))e._store&&(e._store.validated=!0);else if(e){var u=Pe(e);if(typeof u=="function"&&u!==e.entries)for(var s=u.call(e),i;!(i=s.next()).done;)H(i.value)&&ge(i.value,r)}}}function ar(e){{var r=e.type;if(r==null||typeof r=="string")return;var t;if(typeof r=="function")t=r.propTypes;else if(typeof r=="object"&&(r.$$typeof===w||r.$$typeof===j))t=r.propTypes;else return;if(t){var n=h(r);Le(t,e.props,"prop",n,e)}else if(r.PropTypes!==void 0&&!L){L=!0;var u=h(r);d("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?",u||"Unknown")}typeof r.getDefaultProps=="function"&&!r.getDefaultProps.isReactClassApproved&&d("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.")}}function ir(e){{for(var r=Object.keys(e.props),t=0;t<r.length;t++){var n=r[t];if(n!=="children"&&n!=="key"){C(e),d("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.",n),C(null);break}}e.ref!==null&&(C(e),d("Invalid attribute `ref` supplied to `React.Fragment`."),C(null))}}function or(e,r,t,n,u,s){{var i=Ue(e);if(!i){var a="";(e===void 0||typeof e=="object"&&e!==null&&Object.keys(e).length===0)&&(a+=" You likely forgot to export your component from the file it\'s defined in, or you might have mixed up default and named imports.");var v=tr(u);v?a+=v:a+=be();var f;e===null?f="null":W(e)?f="array":e!==void 0&&e.$$typeof===o?(f="<"+(h(e.type)||"Unknown")+" />",a=" Did you accidentally export a JSX literal instead of a component?"):f=typeof e,d("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s",f,a)}var c=rr(e,r,t,u,s);if(c==null)return c;if(i){var p=r.children;if(p!==void 0)if(n)if(W(p)){for(var T=0;T<p.length;T++)_e(p[T],e);Object.freeze&&Object.freeze(p)}else d("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");else _e(p,e)}return e===y?ir(c):ar(c),c}}var ur=or;z.Fragment=y,z.jsxDEV=ur})()});var Se=B((Cr,xe)=>{"use strict";xe.exports=Te()});var _r={};vr(_r,{default:()=>gr,frontmatter:()=>br});var m=mr(Se()),br={title:"Cairo Metro",description:"Cairo Metro is a client-server application that simulates the Cairo Metro system. It is built using PERN stack. The application allows users to view the metro lines, stations, and the shortest path between two stations. It also provides a search feature to find the shortest path between two stations using Floyd Warshall algorithm.It provides admins with semless and comprehensive management of the metro lines, stations, and users. It also provides a dashboard to view the statistics of the users and the most used stations",date:"2024-02-02",url:"https://guide.ahmed-yehia.me/",published:!0,repository:"AhmedHosny2/Student-Guide",slug:"cairo-metro"};function we(l){let o=Object.assign({p:"p",a:"a",img:"img",h1:"h1",span:"span"},l.components);return(0,m.jsxDEV)(m.Fragment,{children:[(0,m.jsxDEV)(o.p,{children:(0,m.jsxDEV)(o.a,{href:"https://cairometro.ahmed-yehia.me",children:(0,m.jsxDEV)(o.img,{src:"https://i.ibb.co/1R7d16z/cairo.png",alt:""},void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx",lineNumber:12,columnNumber:2},this)},void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx",lineNumber:12,columnNumber:1},this)},void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx",lineNumber:12,columnNumber:1},this),`\n`,(0,m.jsxDEV)(o.h1,{id:"student-guide",children:[(0,m.jsxDEV)(o.a,{className:"subheading-anchor","aria-label":"Link to section",href:"#student-guide",children:(0,m.jsxDEV)(o.span,{className:"icon icon-link"},void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx"},this)},void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx"},this),"Cairo Metro"]},void 0,!0,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx",lineNumber:14,columnNumber:1},this),`\n`,(0,m.jsxDEV)(o.p,{children:"Cairo Metro is a client-server application that simulates the Cairo Metro system. It is built using PERN stack. The application allows users to view the metro lines, stations, and the shortest path between two stations. It also provides a search feature to find the shortest path between two stations using Floyd Warshall algorithm.It provides admins with semless and comprehensive management of the metro lines, stations, and users. It also provides a dashboard to view the statistics of the users and the most used stations"},void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx",lineNumber:16,columnNumber:1},this)]},void 0,!0,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx",lineNumber:1,columnNumber:1},this)}function hr(l={}){let{wrapper:o}=l.components||{};return o?(0,m.jsxDEV)(o,Object.assign({},l,{children:(0,m.jsxDEV)(we,l,void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx"},this)}),void 0,!1,{fileName:"C:\\\\Users\\\\ahmed\\\\Documents\\\\GitHub\\\\portfolio\\\\content\\\\projects\\\\_mdx_bundler_entry_point-a8d4e786-7e3c-40f0-8053-2d82b62ef92e.mdx"},this):we(l)}var gr=hr;return pr(_r);})();\n/*! Bundled license information:\n\nreact/cjs/react-jsx-dev-runtime.development.js:\n  (**\n   * @license React\n   * react-jsx-dev-runtime.development.js\n   *\n   * Copyright (c) Facebook, Inc. and its affiliates.\n   *\n   * This source code is licensed under the MIT license found in the\n   * LICENSE file in the root directory of this source tree.\n   *)\n*/\n;return Component;',
+    },
+    _id: "projects/palletePro.mdx",
+    _raw: {
+      sourceFilePath: "../../../content/projects/palletePro.mdx",
+      sourceFileName: "palletePro.mdx",
+      sourceFileDir: "projects",
+      contentType: "mdx",
+      flattenedPath: "projects/palletePro",
+    },
+    type: "Project",
+    path: "/projects/unkey",
+    slug: "palletePro",
+  };
+
+  const CairoMetro: Project = {
     published: true,
     title: "Cairo Metro",
+    stack: ["PostgreSQL", "Express.js", "React", "Node.js"],
     description:
       "Create an efficient and user-friendly application for managing and accessing information about the Cairo Metro, serving the extensive rapid transit system in the city of Cairo, Egypt.",
     date: "2024-02-02T00:00:00.000Z",
@@ -80,10 +109,13 @@ export default async function ProjectsPage() {
     path: "/projects/unkey",
     slug: "cairo-metro",
   };
+
+
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
-      (project) => project.slug !== featured.slug && project.slug !== top2.slug
+      (project) =>
+        project.slug !== StudentGuide.slug && project.slug !== DeskMate.slug
     )
     .sort(
       (a, b) =>
@@ -107,15 +139,17 @@ export default async function ProjectsPage() {
 
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
-            <Link href={`/projects/${featured.slug}`}>
+            <Link href={`/projects/${StudentGuide.slug}`}>
               <article className="relative w-full h-full p-4 md:p-8">
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-xs text-zinc-100">
-                    {featured.date ? (
-                      <time dateTime={new Date(featured.date).toISOString()}>
+                    {StudentGuide.date ? (
+                      <time
+                        dateTime={new Date(StudentGuide.date).toISOString()}
+                      >
                         {Intl.DateTimeFormat(undefined, {
                           dateStyle: "medium",
-                        }).format(new Date(featured.date))}
+                        }).format(new Date(StudentGuide.date))}
                       </time>
                     ) : (
                       <span>SOON</span>
@@ -124,19 +158,29 @@ export default async function ProjectsPage() {
                   <span className="flex items-center gap-1 text-xs text-zinc-500">
                     <Eye className="w-4 h-4" />{" "}
                     {Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                      views[featured.slug] ?? 0
+                      views[StudentGuide.slug] ?? 0
                     )}
                   </span>
                 </div>
 
                 <h2
-                  id="featured-post"
+                  id="StudentGuide-post"
                   className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
                 >
-                  {featured.title}
+                  {StudentGuide.title}
                 </h2>
+                <p className="mt-2 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                  {StudentGuide.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="mr-2 inline-block bg-zinc-800 text-xs xl:text-base text-zinc-100 px-2 py-1 rounded-lg"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </p>
                 <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-                  {featured.description}
+                  {StudentGuide.description}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
                   <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
@@ -148,7 +192,7 @@ export default async function ProjectsPage() {
           </Card>
 
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-            {[top2, top4].map((project) => (
+            {[DeskMate, PalletePro, CairoMetro].map((project) => (
               <Card key={project.slug}>
                 <Article project={project} views={views[project.slug] ?? 0} />
               </Card>
