@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { Menu, X } from "lucide-react";
 
 export interface NavItem {
   id: string;
@@ -20,6 +21,7 @@ interface NavbarProps {
 
 export function Navbar({ items, title, email }: NavbarProps) {
   const [active, setActive] = useState(items[0]?.id ?? "");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,36 +43,76 @@ export function Navbar({ items, title, email }: NavbarProps) {
     return () => observer.disconnect();
   }, [items]);
 
+  const closeMenu = () => setOpen(false);
+
   return (
     <header className="sticky inset-x-0 top-0 z-50 border-b border-white/5 bg-background/70 backdrop-blur-xl">
-      <div className="container flex items-center gap-4 py-4">
+      <div className="container flex items-center gap-3 py-4">
         <Link href="/" className="font-display text-lg font-semibold tracking-tight">
           {title}
         </Link>
-        <nav className="ml-auto flex flex-1 items-center justify-end gap-2 overflow-x-auto">
-          {items.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={cn(
-                "rounded-full px-3 py-2 text-sm font-medium transition-colors",
-                active === item.id
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-              aria-current={active === item.id ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
-          <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
-            <a href={`mailto:${email}`} aria-label="Email Mohamed Tamer">
-              Email
-            </a>
+        <div className="ml-auto flex items-center gap-2">
+          <Button
+            size="icon"
+            variant="ghost"
+            className="md:hidden"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
           <ThemeToggle />
-        </nav>
+          <nav className="hidden md:flex flex-1 items-center justify-end gap-2 overflow-x-auto">
+            {items.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={cn(
+                  "rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                  active === item.id
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+                aria-current={active === item.id ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
+              <a href={`mailto:${email}`} aria-label="Email Mohamed Tamer">
+                Email
+              </a>
+            </Button>
+          </nav>
+        </div>
       </div>
+      {open ? (
+        <div className="md:hidden border-t border-white/10 bg-background/95 px-4 pb-4 pt-2">
+          <div className="flex flex-wrap gap-2">
+            {items.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={closeMenu}
+                className={cn(
+                  "rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                  active === item.id
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+                aria-current={active === item.id ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button asChild size="sm" variant="outline" className="w-full justify-center">
+              <a href={`mailto:${email}`} aria-label="Email Mohamed Tamer">
+                Email
+              </a>
+            </Button>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
