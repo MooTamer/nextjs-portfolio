@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 30% 99%;
+    --foreground: 224 24% 14%;
+    --muted: 220 17% 95%;
+    --muted-foreground: 220 15% 38%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 24% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 24% 14%;
+    --border: 220 18% 88%;
+    --input: 220 18% 88%;
+    --primary: 172 66% 42%;
+    --primary-foreground: 168 100% 98%;
+    --secondary: 234 45% 20%;
+    --secondary-foreground: 226 100% 97%;
+    --accent: 196 80% 45%;
+    --accent-foreground: 168 100% 98%;
+    --ring: 172 66% 42%;
+    --radius: 16px;
+  }
+
+  .dark {
+    --background: 222 38% 6%;
+    --foreground: 210 40% 98%;
+    --muted: 223 28% 13%;
+    --muted-foreground: 215 20% 70%;
+    --popover: 222 38% 6%;
+    --popover-foreground: 210 40% 98%;
+    --card: 222 35% 8%;
+    --card-foreground: 210 40% 98%;
+    --border: 220 15% 21%;
+    --input: 220 15% 21%;
+    --primary: 168 84% 60%;
+    --primary-foreground: 222 50% 6%;
+    --secondary: 238 42% 20%;
+    --secondary-foreground: 210 40% 96%;
+    --accent: 193 80% 56%;
+    --accent-foreground: 222 50% 6%;
+    --ring: 168 84% 60%;
+    --radius: 16px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.08), transparent 28%),
+      radial-gradient(circle at 80% 10%, rgba(99, 102, 241, 0.08), transparent 22%),
+      linear-gradient(120deg, rgba(14, 165, 233, 0.04), rgba(16, 185, 129, 0.05));
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer components {
+  .card-surface {
+    @apply rounded-2xl border border-white/5 bg-card/80 backdrop-blur-md shadow-card;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-muted text-muted-foreground;
+  }
+
+  .section-grid {
+    @apply grid gap-6 md:gap-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  section[data-section] {
+    scroll-margin-top: 96px;
+  }
+}

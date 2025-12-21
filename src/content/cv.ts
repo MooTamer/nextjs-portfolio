@@ -1,0 +1,238 @@
+import { z } from "zod";
+
+export const CvSchema = z.object({
+  profile: z.object({
+    name: z.string(),
+    location: z.string(),
+    phone: z.string(),
+    email: z.string().email(),
+    links: z.object({
+      linkedin: z.string().url(),
+      github: z.string().url(),
+      portfolio: z.string().url().nullable(),
+    }),
+    headline: z.string(),
+    profile_paragraph: z.string(),
+  }),
+  summary_bullets: z.array(z.string()),
+  companies_links: z.object({
+    ips: z.string().url(),
+    evim_app: z.string().url(),
+    alahlymomkn: z.string().url(),
+  }),
+  education: z.array(
+    z.object({
+      school: z.string(),
+      degree: z.string(),
+      start: z.string(),
+      end: z.string(),
+      expected_graduation: z.string(),
+      relevant_courses: z.array(z.string()),
+    })
+  ),
+  experience: z.array(
+    z.object({
+      company: z.string(),
+      role: z.string(),
+      location: z.string(),
+      start: z.string(),
+      end: z.string(),
+      bullets: z.array(z.string()),
+      tags: z.array(z.string()),
+    })
+  ),
+  projects: z.array(
+    z.object({
+      name: z.string(),
+      repo: z.string().url(),
+      start: z.string(),
+      end: z.string(),
+      stack: z.array(z.string()),
+      bullets: z.array(z.string()),
+    })
+  ),
+  skills: z.object({
+    backend_fullstack: z.array(z.string()),
+    frontend: z.array(z.string()),
+    microsoft_sharepoint: z.array(z.string()),
+    mobile: z.array(z.string()),
+    concepts_tools: z.array(z.string()),
+  }),
+  languages: z.array(
+    z.object({
+      name: z.string(),
+      level: z.string(),
+    })
+  ),
+});
+
+const rawCv = {
+  profile: {
+    name: "Mohamed Tamer",
+    location: "Cairo, Egypt",
+    phone: "+(20) 1144500700",
+    email: "mohamedtamer200200@gmail.com",
+    links: {
+      linkedin: "https://www.linkedin.com/in/mohamed-tamer-020a5221a/",
+      github: "https://github.com/MooTamer",
+      portfolio: null,
+    },
+    headline:
+      "Final-year Software Engineering student and versatile software developer with hands-on experience in full-stack development, backend systems, and microservices.",
+    profile_paragraph:
+      "Proven ability to build scalable applications using modern frameworks and cloud technologies. Comfortable working in Agile teams and delivering production-grade solutions.",
+  },
+  summary_bullets: [
+    "Specialized in building full-stack apps with Next.js across freelance/contract work and production systems at IPS.",
+    "Currently building Microsoft SharePoint (modern UI) reusable components for EVIM (Germany) across web and app interfaces.",
+    "Previously shipped enterprise-scale payments features at Al Ahly Momkn, focusing on clean architecture, UI performance, and real-time integrations.",
+    "Experienced in API design, DevOps workflows, database modeling, and deploying applications on cloud-native infrastructure.",
+    "Contributed to an enterprise iOS app during internship and completed a Flutter-based app as part of academic coursework.",
+  ],
+  companies_links: {
+    ips: "https://www.ipswirings.com",
+    evim_app: "https://play.google.com/store/apps/details?id=de.appack.project.evim_mitarbeiter",
+    alahlymomkn: "https://alahlymomkn.com",
+  },
+  education: [
+    {
+      school: "German International University (GIUAS)",
+      degree: "Bachelor of Computer Science — Software Major",
+      start: "Sep 2021",
+      end: "Present",
+      expected_graduation: "Jun 2026",
+      relevant_courses: [
+        "Data Structures",
+        "Database Management",
+        "Software Security",
+        "OOP",
+        "Software Methodology",
+      ],
+    },
+  ],
+  experience: [
+    {
+      company: "EVIM (Germany)",
+      role: "Freelance Frontend Developer",
+      location: "Berlin, Germany — Remote",
+      start: "Oct 2025",
+      end: "Present",
+      bullets: [
+        "Building Microsoft SharePoint Online reusable components aligned with the modern UI experience.",
+        "Stack: SPFx (SharePoint Framework), React, TypeScript, Fluent UI; integrating with existing APIs and design systems.",
+      ],
+      tags: ["SPFx", "React", "TypeScript", "Fluent UI", "SharePoint Online", "Microsoft 365"],
+    },
+    {
+      company: "IPS (International Precision Systems)",
+      role: "Software Developer (Part-Time)",
+      location: "Remote — Egypt",
+      start: "Dec 2024",
+      end: "Present",
+      bullets: [
+        "Leading development of internal management tools and the company website.",
+        "Built responsive UIs; collaborated directly with CEO and designer.",
+      ],
+      tags: ["Next.js", "React", "TypeScript", "UI/UX", "Internal Tools"],
+    },
+    {
+      company: "Al Ahly Momkn for E-payments",
+      role: ".NET Full Stack Developer",
+      location: "Hybrid — Egypt",
+      start: "Jan 2025",
+      end: "Nov 2025",
+      bullets: [
+        "Delivered full-stack features for an enterprise payments platform (.NET, Angular).",
+        "Integrated third-party APIs and internal tools; worked within Agile sprints.",
+      ],
+      tags: [".NET", "Angular", "Payments", "APIs", "Agile"],
+    },
+    {
+      company: "Al Ahly Momkn for E-payments",
+      role: "iOS Developer Intern",
+      location: "Egypt",
+      start: "Aug 2024",
+      end: "Dec 2024",
+      bullets: [
+        "Contributed to a Swift-based iOS app; integrated admin tools and internal UI workflows.",
+      ],
+      tags: ["Swift", "iOS"],
+    },
+  ],
+  projects: [
+    {
+      name: "Pallet Pro",
+      repo: "https://github.com/MooTamer/pallet-pro",
+      start: "Mar 2024",
+      end: "May 2024",
+      stack: ["Next.js", "Tailwind CSS", "Kafka", "NestJS", "Docker"],
+      bullets: [
+        "Built a real-time e-commerce dashboard with dynamic product and order views.",
+        "Integrated Kafka streams with a NestJS backend to enable live stock updates and order handling.",
+      ],
+    },
+    {
+      name: "Student Guide",
+      repo: "https://github.com/MooTamer/Student-Guide",
+      start: "Oct 2023",
+      end: "Nov 2023",
+      stack: ["HTML", "CSS", "Node.js", "Express", "MongoDB"],
+      bullets: [
+        "Developed a microservice-based university app with 98+ Lighthouse scores and responsive UI.",
+        "Implemented profile cards and tutorial maps with dynamic data and action buttons.",
+      ],
+    },
+    {
+      name: "Help Desk System",
+      repo: "https://github.com/MooTamer/Staff-Help-Desk-Backend",
+      start: "Nov 2023",
+      end: "Jan 2024",
+      stack: ["MERN Stack"],
+      bullets: [
+        "Built a microservice help desk platform with custom theming, real-time chat, and AI integration.",
+        "Deployed as a PWA with MFA, backup automation, and performance monitoring.",
+      ],
+    },
+  ],
+  skills: {
+    backend_fullstack: [".NET", "Node.js", "NestJS", "Express", "Java", "C++", "Python"],
+    frontend: [
+      "React",
+      "Angular",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Fluent UI",
+    ],
+    microsoft_sharepoint: ["SharePoint Online", "SPFx", "Microsoft 365"],
+    mobile: ["Flutter (Dart)", "Swift"],
+    concepts_tools: [
+      "Software Design",
+      "OOP",
+      "Data Structures",
+      "DBMS",
+      "Testing",
+      "CI/CD",
+      "Kafka",
+      "Git",
+      "Agile",
+      "Docker",
+      "Cloud",
+      "AWS",
+      "Figma",
+    ],
+  },
+  languages: [
+    { name: "English", level: "Fluent (C1)" },
+    { name: "German", level: "Good (A2)" },
+    { name: "Arabic", level: "Native" },
+  ],
+} as const;
+
+export type CvData = z.infer<typeof CvSchema>;
+export type Experience = CvData["experience"][number];
+export type Project = CvData["projects"][number];
+export type Education = CvData["education"][number];
+
+export const cvData = CvSchema.parse(rawCv);
