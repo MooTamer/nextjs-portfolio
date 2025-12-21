@@ -30,7 +30,7 @@ export function AboutSection() {
               <CardContent className="space-y-4">
                 {cvData.summary_bullets.map((item) => (
                   <div key={item} className="flex gap-3">
-                    <span className="mt-1 flex h-9 w-9 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <span className="mt-1 flex h-6 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <Sparkles className="h-4 w-4" />
                     </span>
                     <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>

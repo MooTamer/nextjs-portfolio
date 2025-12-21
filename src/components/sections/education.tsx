@@ -32,7 +32,7 @@ export function EducationSection() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">{edu.degree}</p>
-                  <p className="text-sm font-medium text-foreground">
+                  <p className="text-sm font-medium text-foreground mb-6">
                     Expected graduation: {edu.expected_graduation}
                   </p>
                 </CardHeader>

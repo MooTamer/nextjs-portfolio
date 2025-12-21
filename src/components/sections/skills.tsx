@@ -1,48 +1,75 @@
+import React from "react";
+import {
+  SiAmazonaws,
+  SiAngular,
+  SiApachekafka,
+  SiCplusplus,
+  SiDocker,
+  SiExpress,
+  SiFigma,
+  SiFlutter,
+  SiGit,
+  SiJavascript,
+  SiMicrosoft,
+  SiMicrosoftsharepoint,
+  SiDotnet,
+  SiOpenjdk,
+  SiNestjs,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiSwift,
+  SiTailwindcss,
+  SiTypescript,
+} from "@icons-pack/react-simple-icons";
+
 import { cvData } from "@/content/cv";
 import { FadeIn } from "@/components/shared/fade-in";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-const techPalette: Record<
-  string,
-  { bg: string; text: string; label?: string }
-> = {
-  "Next.js": { bg: "bg-neutral-900", text: "text-white" },
-  "TypeScript": { bg: "bg-[#3178c6]", text: "text-white", label: "TS" },
-  "JavaScript": { bg: "bg-[#f7df1e]", text: "text-black", label: "JS" },
-  React: { bg: "bg-[#00d8ff]", text: "text-black" },
-  "Tailwind CSS": { bg: "bg-[#38bdf8]", text: "text-black", label: "TW" },
-  ".NET": { bg: "bg-[#5c2d91]", text: "text-white" },
-  Node.js: { bg: "bg-[#026e00]", text: "text-white", label: "Node" },
-  NestJS: { bg: "bg-[#e0234e]", text: "text-white", label: "Nest" },
-  Express: { bg: "bg-neutral-800", text: "text-white", label: "Ex" },
-  Java: { bg: "bg-[#e76f00]", text: "text-white" },
-  "C++": { bg: "bg-[#004482]", text: "text-white" },
-  Python: { bg: "bg-[#3776ab]", text: "text-white", label: "Py" },
-  Angular: { bg: "bg-[#c3002f]", text: "text-white" },
-  "SharePoint Online": { bg: "bg-[#037362]", text: "text-white", label: "SP" },
-  SPFx: { bg: "bg-[#185abd]", text: "text-white" },
-  "Microsoft 365": { bg: "bg-[#0f7bff]", text: "text-white", label: "M365" },
-  Swift: { bg: "bg-[#fa7343]", text: "text-white" },
-  Flutter: { bg: "bg-[#02569b]", text: "text-white" },
-  Docker: { bg: "bg-[#0db7ed]", text: "text-white" },
-  Kafka: { bg: "bg-[#231f20]", text: "text-white" },
-  AWS: { bg: "bg-[#ff9900]", text: "text-black" },
-  Figma: { bg: "bg-[#f24e1e]", text: "text-white" },
+const techIcons: Record<string, React.ReactNode> = {
+  "Next.js": <SiNextdotjs size={16} title="Next.js" />,
+  React: <SiReact size={16} title="React" />,
+  TypeScript: <SiTypescript size={16} title="TypeScript" />,
+  JavaScript: <SiJavascript size={16} title="JavaScript" />,
+  "Tailwind CSS": <SiTailwindcss size={16} title="Tailwind CSS" />,
+  Angular: <SiAngular size={16} title="Angular" />,
+  "Node.js": <SiNodedotjs size={16} title="Node.js" />,
+  NestJS: <SiNestjs size={16} title="NestJS" />,
+  Express: <SiExpress size={16} title="Express" />,
+  ".NET": <SiDotnet size={16} title=".NET" />,
+  Java: <SiOpenjdk size={16} title="Java" />,
+  "C++": <SiCplusplus size={16} title="C++" />,
+  Python: <SiPython size={16} title="Python" />,
+  "SharePoint Online": <SiMicrosoftsharepoint size={16} title="SharePoint Online" />,
+  SPFx: <SiMicrosoft size={16} title="SPFx" />,
+  "Microsoft 365": <SiMicrosoft size={16} title="Microsoft 365" />,
+  "Fluent UI": <SiMicrosoft size={16} title="Fluent UI" />,
+  Swift: <SiSwift size={16} title="Swift" />,
+  "Flutter (Dart)": <SiFlutter size={16} title="Flutter" />,
+  Flutter: <SiFlutter size={16} title="Flutter" />,
+  Docker: <SiDocker size={16} title="Docker" />,
+  Kafka: <SiApachekafka size={16} title="Kafka" />,
+  AWS: <SiAmazonaws size={16} title="AWS" />,
+  Git: <SiGit size={16} title="Git" />,
+  Figma: <SiFigma size={16} title="Figma" />,
 };
 
 function LogoMark({ name }: { name: string }) {
-  const palette = techPalette[name] ?? {
-    bg: "bg-muted",
-    text: "text-foreground",
-  };
-  const label = palette.label ?? name.split(" ")[0]?.slice(0, 3).toUpperCase();
+  const icon = techIcons[name];
+  if (icon) {
+    return (
+      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted">
+        {icon}
+      </span>
+    );
+  }
+  const label = name.split(" ")[0]?.slice(0, 3).toUpperCase();
   return (
-    <span
-      className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-semibold ${palette.bg} ${palette.text}`}
-      aria-hidden
-    >
+    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-[11px] font-semibold text-foreground">
       {label}
     </span>
   );
@@ -74,18 +101,18 @@ export function SkillsSection() {
                   <CardHeader className="gap-1">
                     <h3 className="font-display text-lg">{group.title}</h3>
                   </CardHeader>
-                  <CardContent className="flex flex-wrap gap-2 mt-4">
+                  <CardContent className="mt-4 flex flex-wrap gap-2">
                     {items.map((item) => (
-                    <Badge key={item} variant="muted">
-                      <span className="flex items-center gap-2">
-                        <LogoMark name={item} />
-                        {item}
-                      </span>
-                    </Badge>
-                  ))}
-                </CardContent>
-              </Card>
-            </FadeIn>
+                      <Badge key={item} variant="muted">
+                        <span className="flex items-center gap-2">
+                          <LogoMark name={item} />
+                          {item}
+                        </span>
+                      </Badge>
+                    ))}
+                  </CardContent>
+                </Card>
+              </FadeIn>
             );
           })}
         </div>

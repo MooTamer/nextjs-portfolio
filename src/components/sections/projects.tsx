@@ -34,7 +34,7 @@ export function ProjectsSection() {
                       </a>
                     </Button>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.stack.map((tech) => (
                       <Badge key={`${project.name}-${tech}`} variant="outline">
                         {tech}
