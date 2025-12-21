@@ -21,19 +21,21 @@ export function ExperienceSection() {
           title="Roles & impact"
           description="Every role is backed by shipped features, cross-functional collaboration, and thoughtful UI/UX decisions."
         />
-        <div className="section-grid">
+        <div className="section-grid ">
           {cvData.experience.map((item, index) => {
             const link = companyLinks[item.company];
             return (
               <FadeIn key={`${item.company}-${item.role}`} delay={index * 0.04}>
                 <Card className="p-6 md:p-7">
-                  <CardHeader className="gap-3">
-                    <div className="flex flex-wrap items-center gap-3">
+                  <CardHeader className="gap-3 mb-4">
+                    <div className="flex flex-wrap items-center gap-3 ">
                       <h3 className="font-display text-xl">{item.role}</h3>
                       <Badge variant="outline">{item.location}</Badge>
                     </div>
                     <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground">{item.company}</span>
+                      <span className="font-semibold text-base text-foreground">
+                        {item.company}
+                      </span>
                       <span>&bull;</span>
                       <span>
                         {item.start} — {item.end}
