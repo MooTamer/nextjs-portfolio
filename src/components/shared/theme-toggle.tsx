@@ -14,6 +14,10 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return <div className="h-10 w-10 rounded-xl border border-border bg-muted/40" aria-hidden />;
+  }
+
   const current = theme === "system" ? systemTheme : theme;
   const resolvedTheme = current ?? "light";
 

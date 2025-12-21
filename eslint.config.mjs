@@ -5,7 +5,17 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: ["node_modules", ".next", "dist", "public", "pnpm-lock.yaml", "pnpm-workspace.yaml"],
+    ignores: [
+      "node_modules",
+      ".next",
+      "dist",
+      "public",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "tailwind.config.ts",
+      "postcss.config.mjs",
+      "prettier.config.cjs",
+    ],
   },
   {
     extends: [

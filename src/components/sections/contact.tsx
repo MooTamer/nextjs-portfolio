@@ -1,5 +1,4 @@
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import Link from "next/link";
 
 import { cvData } from "@/content/cv";
 import { FadeIn } from "@/components/shared/fade-in";
@@ -65,13 +64,14 @@ export function ContactSection() {
                       {item.label}
                     </p>
                     {item.href ? (
-                      <Link
+                      <a
                         href={item.href}
                         className="text-sm font-semibold text-foreground hover:text-primary"
                         target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                       >
                         {item.value}
-                      </Link>
+                      </a>
                     ) : (
                       <p className="text-sm font-semibold text-foreground">{item.value}</p>
                     )}
@@ -82,7 +82,7 @@ export function ContactSection() {
                 <Badge variant="outline">Available for: Next.js, React, SPFx</Badge>
                 <Badge variant="muted">Prefers remote-friendly teams</Badge>
                 <Button asChild variant="secondary" className="ml-auto">
-                  <Link href={`mailto:${cvData.profile.email}`}>Start a conversation</Link>
+                  <a href={`mailto:${cvData.profile.email}`}>Start a conversation</a>
                 </Button>
               </div>
             </CardContent>

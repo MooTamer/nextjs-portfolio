@@ -1,5 +1,4 @@
 import { ArrowUpRight, Github } from "lucide-react";
-import Link from "next/link";
 
 import { cvData } from "@/content/cv";
 import { FadeIn } from "@/components/shared/fade-in";
@@ -30,9 +29,9 @@ export function ProjectsSection() {
                       <h3 className="font-display text-xl">{project.name}</h3>
                     </div>
                     <Button asChild size="icon" variant="ghost" className="self-start">
-                      <Link href={project.repo} target="_blank" aria-label={`${project.name} repo`}>
+                      <a href={project.repo} target="_blank" aria-label={`${project.name} repo`} rel="noreferrer">
                         <Github className="h-5 w-5" />
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -51,10 +50,10 @@ export function ProjectsSection() {
                     </p>
                   ))}
                   <Button asChild variant="outline" className="mt-2 w-fit">
-                    <Link href={project.repo} target="_blank">
+                    <a href={project.repo} target="_blank" rel="noreferrer">
                       View repository
                       <ArrowUpRight className="h-4 w-4" />
-                    </Link>
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 import { cvData } from "@/content/cv";
 import { FadeIn } from "@/components/shared/fade-in";
@@ -40,14 +39,15 @@ export function ExperienceSection() {
                         {item.start} — {item.end}
                       </span>
                       {link ? (
-                        <Link
+                        <a
                           href={link}
                           className="inline-flex items-center gap-1 text-primary hover:text-primary/80"
                           target="_blank"
+                          rel="noreferrer"
                         >
                           View
                           <ArrowUpRight className="h-4 w-4" />
-                        </Link>
+                        </a>
                       ) : null}
                     </div>
                   </CardHeader>

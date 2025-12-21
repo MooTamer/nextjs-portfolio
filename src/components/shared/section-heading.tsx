@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 
-type SectionHeadingProps = {
+interface SectionHeadingProps {
   title: string;
   eyebrow?: string;
   description?: string;
   align?: "left" | "center";
   className?: string;
-};
+}
 
 export function SectionHeading({
   title,
@@ -24,7 +24,12 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+        <div
+          className={cn(
+            "inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary",
+            align === "center" ? "mx-auto" : "mr-auto"
+          )}
+        >
           <span className="h-1 w-1 rounded-full bg-primary" />
           {eyebrow}
         </div>

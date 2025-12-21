@@ -7,16 +7,16 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 
-export type NavItem = {
+export interface NavItem {
   id: string;
   label: string;
-};
+}
 
-type NavbarProps = {
+interface NavbarProps {
   items: NavItem[];
   title: string;
   email: string;
-};
+}
 
 export function Navbar({ items, title, email }: NavbarProps) {
   const [active, setActive] = useState(items[0]?.id ?? "");

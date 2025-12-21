@@ -1,0 +1,22 @@
+# Content Notes
+
+- **Single source of truth:** `src/content/cv.ts` exports the raw CV JSON and validates it with the `CvSchema` (Zod). All page sections import from this module—no other hard-coded copy exists.
+- **Schema overview:**  
+  - `profile`: name, location, phone, email, headline, profile_paragraph, and `links` (linkedin, github, portfolio: `string | null`).  
+  - `summary_bullets`: string array used in About.  
+  - `companies_links`: URLs keyed by company names used in the Experience link-out badges.  
+  - `education`: array with `school`, `degree`, `start`, `end`, `expected_graduation`, `relevant_courses`.  
+  - `experience`: array with `company`, `role`, `location`, `start`, `end`, `bullets`, `tags`.  
+  - `projects`: array with `name`, `repo`, `start`, `end`, `stack`, `bullets`.  
+  - `skills`: grouped arrays (`backend_fullstack`, `frontend`, `microsoft_sharepoint`, `mobile`, `concepts_tools`).  
+  - `languages`: array with `name`, `level`.
+- **Rendering rules:**  
+  - Hero renders name/headline/paragraph, current roles (where `end === "Present"`), and CTAs for **Email**, **LinkedIn**, **GitHub** only. `portfolio` is deliberately ignored when `null` per requirements.  
+  - About uses `profile_paragraph` plus `summary_bullets`.  
+  - Experience cards show `start–end`, bullets, tags, and link buttons when a matching entry exists in `companies_links`.  
+  - Projects grid uses repo URLs for CTAs; stack arrays become pills.  
+  - Skills grid respects the schema grouping; add/remove items in `skills` to change pills.  
+  - Education shows `expected_graduation` and course badges.  
+  - Languages list renders every entry in `languages`.  
+  - Contact pulls from `profile` and `links` (no portfolio button).
+- **Updating content:** edit `src/content/cv.ts`, keep the structure intact, and the Zod parse will catch shape errors at build time. If adding new companies that need link-outs, extend the `companyLinks` map in `src/components/sections/experience.tsx`.

@@ -1,5 +1,4 @@
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
-import Link from "next/link";
 
 import { cvData } from "@/content/cv";
 import { FadeIn } from "@/components/shared/fade-in";
@@ -62,11 +61,15 @@ export function HeroSection() {
           <div className="flex flex-wrap items-center gap-3">
             {primaryLinks.map((link) => (
               <Button key={link.label} asChild variant="default">
-                <Link href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined}>
+                <a
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
                   {link.icon}
                   {link.label}
                   <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             ))}
           </div>

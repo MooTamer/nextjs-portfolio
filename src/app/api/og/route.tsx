@@ -10,7 +10,7 @@ const size = {
   height: 630,
 };
 
-export async function GET() {
+export function GET() {
   return new ImageResponse(
     <div
       style={{

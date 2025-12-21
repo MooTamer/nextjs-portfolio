@@ -18,7 +18,9 @@ export function AboutSection() {
           <FadeIn>
             <Card className="p-6 md:p-7">
               <CardContent className="space-y-4 text-lg leading-relaxed text-muted-foreground">
-                <p className="text-foreground text-xl font-semibold">{cvData.profile.headline}</p>
+                <p className="text-foreground text-xl font-semibold">
+                  {cvData.profile.headline}
+                </p>
                 <p>{cvData.profile.profile_paragraph}</p>
               </CardContent>
             </Card>
