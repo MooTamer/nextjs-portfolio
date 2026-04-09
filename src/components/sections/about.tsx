@@ -7,31 +7,34 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function AboutSection() {
   return (
-    <section id="about" data-section className="py-12">
-      <div className="container space-y-8">
+    <section id="about" data-section className="py-20">
+      <div className="container space-y-10">
         <SectionHeading
           eyebrow="About"
           title="What drives my work"
           description="A quick snapshot of how I approach building modern products and the problems I enjoy solving."
         />
-        <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <FadeIn>
-            <Card className="p-6 md:p-7">
-              <CardContent className="space-y-4 text-lg leading-relaxed text-muted-foreground">
-                <p className="text-foreground text-xl font-semibold">
+            <Card className="h-full p-7 md:p-8">
+              <CardContent className="gap-4">
+                <p className="text-lg font-bold leading-snug text-foreground sm:text-xl">
                   {cvData.profile.headline}
                 </p>
-                <p>{cvData.profile.profile_paragraph}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  {cvData.profile.profile_paragraph}
+                </p>
               </CardContent>
             </Card>
           </FadeIn>
-          <FadeIn delay={0.05}>
-            <Card className="p-6 md:p-7">
-              <CardContent className="space-y-4">
-                {cvData.summary_bullets.map((item) => (
-                  <div key={item} className="flex gap-3">
-                    <span className="mt-1 flex h-6 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <Sparkles className="h-4 w-4" />
+
+          <FadeIn delay={0.1}>
+            <Card className="h-full p-7 md:p-8">
+              <CardContent className="gap-0 divide-y divide-border/50">
+                {cvData.summary_bullets.map((item, i) => (
+                  <div key={i} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <Sparkles className="h-3.5 w-3.5" />
                     </span>
                     <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
                   </div>
