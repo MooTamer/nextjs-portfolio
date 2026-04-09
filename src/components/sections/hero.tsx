@@ -1,113 +1,120 @@
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 
 import { cvData } from "@/content/cv";
-import { FadeIn } from "@/components/shared/fade-in";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/shared/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-
-const primaryLinks = [
-  {
-    href: `mailto:${cvData.profile.email}`,
-    label: "Email",
-    icon: <Mail className="h-4 w-4" />,
-  },
-  {
-    href: cvData.profile.links.linkedin,
-    label: "LinkedIn",
-    icon: <Linkedin className="h-4 w-4" />,
-  },
-  {
-    href: cvData.profile.links.github,
-    label: "GitHub",
-    icon: <Github className="h-4 w-4" />,
-  },
-];
+import { Card, CardContent } from "@/components/ui/card";
 
 const currentRoles = cvData.experience.filter((role) => role.end === "Present");
-const spotlightSkills = [
-  cvData.skills.frontend[2], // Next.js
-  cvData.skills.frontend[3], // TypeScript
-  cvData.skills.microsoft_sharepoint[0], // SharePoint Online
-].filter(Boolean);
 
 export function HeroSection() {
   return (
     <section
       id="hero"
       data-section
-      className="relative overflow-hidden pb-16 pt-12 sm:pt-20 md:pt-24"
+      className="relative overflow-hidden py-24 sm:py-28 md:py-32"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 top-10 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute left-[10%] top-1/2 h-48 w-48 rounded-full bg-secondary/20 blur-3xl" />
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]" />
+        <div className="absolute left-[5%] top-1/2 h-64 w-64 rounded-full bg-secondary/10 blur-[80px]" />
+        <div className="absolute right-[10%] bottom-0 h-48 w-48 rounded-full bg-accent/10 blur-[60px]" />
       </div>
-      <div className="container relative grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+
+      <div className="container relative grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        {/* Left — identity */}
         <FadeIn className="space-y-8">
-          <Badge variant="outline" className="bg-primary/10 text-primary">
+          <Badge variant="pill" className="border-primary/20 bg-primary/10 text-primary">
             {cvData.profile.location}
           </Badge>
+
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-              {cvData.profile.headline}
-            </p>
-            <h1 className="font-display text-4xl leading-tight sm:text-5xl">
-              {cvData.profile.name}
+            <p className="text-base font-medium text-muted-foreground">Hi, I&apos;m</p>
+            <h1 className="font-display text-5xl font-black leading-[1.0] tracking-[-0.04em] sm:text-6xl md:text-7xl">
+              {cvData.profile.name.split(" ").map((part, i) => (
+                <span key={i} className="block">
+                  {part}
+                </span>
+              ))}
             </h1>
-            <p className="max-w-2xl text-lg text-muted-foreground">
-              {cvData.profile.profile_paragraph}
+            <p className="text-xl font-bold text-primary sm:text-2xl">
+              Full-Stack Developer &amp; SharePoint Engineer
             </p>
           </div>
+
+          <p className="max-w-md text-base leading-relaxed text-muted-foreground">
+            {cvData.profile.profile_paragraph}
+          </p>
+
           <div className="flex flex-wrap items-center gap-3">
-            {primaryLinks.map((link) => (
-              <Button key={link.label} asChild variant="default">
-                <a
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                >
-                  {link.icon}
-                  {link.label}
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </Button>
-            ))}
+            <Button asChild>
+              <a href={`mailto:${cvData.profile.email}`}>
+                <Mail className="h-4 w-4" />
+                Email me
+              </a>
+            </Button>
+            <Button asChild variant="outline">
+              <a href={cvData.profile.links.linkedin} target="_blank" rel="noreferrer">
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </Button>
+            <Button asChild variant="ghost">
+              <a href={cvData.profile.links.github} target="_blank" rel="noreferrer">
+                <Github className="h-4 w-4" />
+                GitHub
+              </a>
+            </Button>
           </div>
+
           <div className="flex flex-wrap gap-2">
-            {spotlightSkills.map((skill) => (
-              <Badge key={skill} variant="muted">
-                {skill}
-              </Badge>
-            ))}
+            {[
+              cvData.skills.frontend[2],
+              cvData.skills.frontend[3],
+              cvData.skills.microsoft_sharepoint[0],
+            ]
+              .filter(Boolean)
+              .map((skill) => (
+                <Badge key={skill} variant="chip">
+                  {skill}
+                </Badge>
+              ))}
           </div>
         </FadeIn>
 
-        <FadeIn className="grid gap-4 md:grid-cols-2">
-          {currentRoles.map((role, index) => (
-            <Card key={`${role.company}-${role.role}`} className="p-5">
-              <CardHeader className="gap-1">
-                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                  Current
-                </p>
-                <h3 className="font-display text-lg">{role.role}</h3>
-                <p className="text-sm text-muted-foreground">{role.company}</p>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <p className="text-xs font-medium text-muted-foreground">
-                  {role.start} — {role.end}
-                </p>
-                <p className="text-sm leading-relaxed text-muted-foreground">{role.bullets[0]}</p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {role.tags.slice(0, 3).map((tag) => (
-                    <Badge key={`${role.company}-${tag}-${index}`} variant="outline">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+        {/* Right — current roles */}
+        <StaggerContainer className="space-y-4" delayChildren={0.25}>
+          {currentRoles.map((role) => (
+            <StaggerItem key={`${role.company}-${role.role}`}>
+              <Card className="p-5">
+                <CardContent className="gap-3">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-primary">
+                      Active
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-bold leading-snug">{role.role}</h3>
+                    <p className="text-sm text-muted-foreground">{role.company}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground/70">
+                      {role.start} — {role.end}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {role.tags.slice(0, 3).map((tag) => (
+                      <Badge key={tag} variant="chip">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </StaggerItem>
           ))}
-        </FadeIn>
+        </StaggerContainer>
       </div>
     </section>
   );

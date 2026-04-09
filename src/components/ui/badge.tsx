@@ -10,6 +10,7 @@ const badgeVariants = cva(
       variant: {
         default:
           "rounded-full px-3 py-0.5 border-transparent bg-primary/10 text-primary hover:bg-primary/15 ring-offset-background",
+        pill: "rounded-full px-3 py-0.5 border-transparent bg-primary/10 text-primary hover:bg-primary/15 ring-offset-background",
         muted: "rounded-full px-3 py-0.5 border-transparent bg-muted text-muted-foreground hover:bg-muted/80",
         outline: "rounded-full px-3 py-0.5 text-foreground border-border hover:bg-muted/60",
         chip: "rounded-lg px-3 py-1.5 border-transparent bg-muted/60 text-foreground hover:bg-muted/80 flex items-center gap-2",
