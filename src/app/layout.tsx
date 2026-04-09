@@ -8,13 +8,13 @@ import { cvData } from "@/content/cv";
 
 const fontSans = Manrope({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-sans-custom",
   display: "swap",
 });
 
 const fontDisplay = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-display-custom",
   display: "swap",
 });
 
