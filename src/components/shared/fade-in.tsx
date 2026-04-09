@@ -40,11 +40,11 @@ const staggerItemVariants = {
   show: { opacity: 1, y: 0 },
 };
 
-type StaggerContainerProps = {
+interface StaggerContainerProps {
   children: React.ReactNode;
   className?: string;
   delayChildren?: number;
-};
+}
 
 export function StaggerContainer({ children, className, delayChildren = 0 }: StaggerContainerProps) {
   return (
