@@ -16,6 +16,7 @@ All copy comes from `src/content/cv.ts` (validated with Zod). Update that file t
 ## Getting started
 
 ```bash
+nvm use
 pnpm install
 pnpm dev
 ```
