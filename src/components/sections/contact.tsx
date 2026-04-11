@@ -56,7 +56,7 @@ export function ContactSection() {
                 {contactItems.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-start gap-3 rounded-xl border border-black/[0.06] bg-black/[0.02] p-4 dark:border-white/[0.06] dark:bg-white/[0.02]"
+                    className="flex min-w-0 items-start gap-3 rounded-xl border border-black/[0.06] bg-black/[0.02] p-4 dark:border-white/[0.06] dark:bg-white/[0.02]"
                   >
                     <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       {item.icon}
@@ -68,7 +68,7 @@ export function ContactSection() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="block truncate text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                          className="block break-all text-sm font-semibold text-foreground transition-colors hover:text-primary sm:truncate sm:break-normal"
                           target={item.href.startsWith("http") ? "_blank" : undefined}
                           rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                         >
