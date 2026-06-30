@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import "./globals.css";
 import { Providers } from "./providers";
 import { cvData } from "@/content/cv";
+import { JsonLd } from "@/components/seo/json-ld";
 
 const fontSans = Manrope({
   subsets: ["latin"],
@@ -20,49 +21,96 @@ const fontDisplay = Space_Grotesk({
 
 const keywords = [
   cvData.profile.name,
+  "Full-Stack Software Engineer",
+  "Software Engineer",
+  "Frontend Engineer",
   "Next.js",
   "React",
   "TypeScript",
   "SPFx",
   "SharePoint",
-  "Frontend Engineer",
-  "Software Engineer",
+  "Odoo",
+  "ERP",
+  "MES",
   "Cairo",
+  "Sydney",
+  "Australia",
 ];
+
+const ogImage = {
+  url: `${siteConfig.url}/api/og`,
+  width: 1200,
+  height: 630,
+  alt: siteConfig.title,
+};
+
+// Search-engine ownership verification — set via env so tokens never live in git.
+// These render server-side into <head>, so they don't need a NEXT_PUBLIC_ prefix.
+const verification: Metadata["verification"] = {
+  google: process.env.GOOGLE_SITE_VERIFICATION,
+  other: process.env.BING_SITE_VERIFICATION
+    ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+    : undefined,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: siteConfig.title,
     template: `%s | ${cvData.profile.name}`,
   },
   description: siteConfig.description,
   keywords,
+  applicationName: siteConfig.name,
   authors: [{ name: cvData.profile.name, url: siteConfig.url }],
+  creator: cvData.profile.name,
+  publisher: cvData.profile.name,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-AU": "/",
+      "en-US": "/",
+      "en-GB": "/",
+      "x-default": "/",
+    },
+  },
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
-    type: "website",
-    locale: siteConfig.locale,
+    type: "profile",
+    firstName: "Mohamed",
+    lastName: "Tamer",
+    username: "MooTamer",
+    locale: "en_US",
+    alternateLocale: ["en_AU", "en_GB"],
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
-    images: [
-      {
-        url: `${siteConfig.url}/api/og`,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: siteConfig.title,
     description: siteConfig.description,
+    images: [ogImage.url],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification,
+  other: {
+    // Legacy geo hints — harmless, signal the page's target market (Sydney).
+    "geo.region": `${siteConfig.targetLocation.country}-${siteConfig.targetLocation.region}`,
+    "geo.placename": `${siteConfig.targetLocation.locality}, Australia`,
   },
 };
 
@@ -79,6 +127,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${fontSans.variable} ${fontDisplay.variable} bg-background text-foreground`}
       >
+        <JsonLd />
         <Providers>
           <div className="relative min-h-screen">
             <div className="pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_65%)]">
