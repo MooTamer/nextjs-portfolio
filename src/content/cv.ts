@@ -90,10 +90,10 @@ const rawCv = {
     relocation: "Open to relocating to Sydney, Australia",
   },
   summary_bullets: [
-    "Specialized in building full-stack applications with Next.js across freelance/contract work and production systems at IPS.",
-    "Currently developing reusable Microsoft SharePoint (modern UI) components for EVIM (Germany) across web and mobile interfaces.",
-    "Previously delivered enterprise-scale payment features at Al Ahly Momkn, with a focus on clean architecture, UI performance, and real-time integrations.",
-    "Exposure to mobile development through contribution to an enterprise iOS application during internship and a Flutter-based academic project.",
+    "Built IPS's full Odoo ERP end-to-end and am building an in-house MES in Next.js, TypeScript, and Supabase for real-time production tracking and bottleneck detection.",
+    "Building 40+ reusable SharePoint (SPFx) components in React + TypeScript for EVIM (Germany), across internal web and mobile workflows.",
+    "Delivered 30+ customer-facing features for Al Ahly Momkn — a national payments platform serving 5M+ users — across an Angular/TypeScript front end and a .NET backend.",
+    "Strong on clean architecture, performance, and Agile delivery; open to relocating to Sydney, Australia.",
   ],
   companies_links: {
     ips: "https://www.ipswirings.com",
