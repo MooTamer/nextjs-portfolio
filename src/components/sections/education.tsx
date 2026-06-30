@@ -33,7 +33,7 @@ export function EducationSection() {
                   </div>
                   <p className="text-sm text-muted-foreground">{edu.degree}</p>
                   <p className="text-sm font-semibold text-foreground">
-                    Expected graduation: {edu.expected_graduation}
+                    Graduating {edu.expected_graduation}
                   </p>
                 </CardHeader>
                 <CardContent className="flex-row flex-wrap gap-2">

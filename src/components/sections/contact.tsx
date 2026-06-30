@@ -47,7 +47,7 @@ export function ContactSection() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's collaborate"
-          description="Open to freelance and product engineering roles focused on performant interfaces and dependable systems."
+          description="Open to software engineering roles in Sydney, Australia — relocation and visa sponsorship welcome. Also open to remote/contract."
         />
         <FadeIn>
           <Card className="p-6 md:p-8">
@@ -85,6 +85,7 @@ export function ContactSection() {
               <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border/50 pt-4">
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="outline">Next.js · React · SPFx</Badge>
+                  <Badge variant="default">Open to Sydney relocation</Badge>
                   <Badge variant="muted">Remote-friendly</Badge>
                 </div>
                 <Button asChild className="w-full sm:w-auto">

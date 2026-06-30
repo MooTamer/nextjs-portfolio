@@ -25,9 +25,12 @@ export function HeroSection() {
       <div className="container relative grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         {/* Left — identity */}
         <FadeIn className="space-y-8">
-          <Badge variant="pill" className="border-primary/20 bg-primary/10 text-primary">
-            {cvData.profile.location}
-          </Badge>
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="pill" className="border-primary/20 bg-primary/10 text-primary">
+              {cvData.profile.location}
+            </Badge>
+            <Badge variant="muted">{cvData.profile.relocation}</Badge>
+          </div>
 
           <div className="space-y-4">
             <p className="text-base font-medium text-muted-foreground">Hi, I&apos;m</p>
@@ -39,7 +42,10 @@ export function HeroSection() {
               ))}
             </h1>
             <p className="text-xl font-bold text-primary sm:text-2xl">
-              Full-Stack Developer &amp; SharePoint Engineer
+              {cvData.profile.headline}
+            </p>
+            <p className="text-sm font-medium text-muted-foreground">
+              {cvData.profile.headline_sub}
             </p>
           </div>
 

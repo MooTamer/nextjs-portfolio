@@ -22,7 +22,7 @@ export function AboutSection() {
                   {cvData.profile.headline}
                 </p>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  {cvData.profile.profile_paragraph}
+                  {cvData.profile.about_paragraph}
                 </p>
               </CardContent>
             </Card>
