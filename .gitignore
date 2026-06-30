@@ -17,7 +17,20 @@
 
 # misc
 .DS_Store
+._*
 *.pem
+
+# local agent / AI tooling state (keep local, never commit)
+.claude/
+.claude-flow/
+.superpowers/
+docs/superpowers/
+
+# playwright / test artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+.playwright/
 
 # debug
 npm-debug.log*
