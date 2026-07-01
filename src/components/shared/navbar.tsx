@@ -62,8 +62,14 @@ export function Navbar({ items, title, email }: NavbarProps) {
       <div className="container flex items-center gap-3 py-4">
         <Link
           href="/"
-          className="font-display text-base font-extrabold tracking-tight sm:text-lg"
+          aria-label={`${title} — home`}
+          className="flex items-center gap-2 font-display text-base font-extrabold tracking-tight sm:text-lg"
         >
+          <span
+            aria-hidden
+            className="h-7 w-7 shrink-0 bg-contain bg-center bg-no-repeat"
+            style={{ backgroundImage: "url(/icon.svg)" }}
+          />
           {title}
         </Link>
 
