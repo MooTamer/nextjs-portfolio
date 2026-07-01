@@ -66,6 +66,11 @@ export const metadata: Metadata = {
   creator: cvData.profile.name,
   publisher: cvData.profile.name,
   category: "technology",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+    apple: [{ url: "/apple-icon", sizes: "180x180" }],
+  },
   alternates: {
     canonical: "/",
     languages: {

@@ -16,8 +16,8 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     categories: ["portfolio", "technology", "business"],
     icons: [
-      { src: "/a.png", sizes: "241x241", type: "image/png", purpose: "any" },
-      { src: "/favicon.png", sizes: "1038x930", type: "image/png" },
+      { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
+      { src: "/apple-icon", sizes: "180x180", type: "image/png", purpose: "maskable" },
     ],
   };
 }
