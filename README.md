@@ -1,33 +1,40 @@
-# Mohamed Tamer — Portfolio
+# mohamedtamer.me
 
-Modernized personal site built with the Next.js App Router, React Server Components, and a Zod-validated CV data model.
+Source for my personal site, live at [www.mohamedtamer.me](https://www.mohamedtamer.me).
 
 ## Stack
 
-- Next.js 16 (App Router) with React 19 + TypeScript 5.9
-- Tailwind CSS 3.4 + shadcn-inspired UI primitives
-- next-themes for system-aware light/dark mode
-- Framer Motion for purposeful section reveals
+- Next.js 16 (App Router), React 19 and TypeScript
+- Tailwind CSS, with next-themes for light and dark mode
+- Framer Motion for small section transitions
+- Zod to validate the site content at build time
 
-## Content source
+## How the content works
 
-All copy comes from `src/content/cv.ts` (validated with Zod). Update that file to change profile details, experience, projects, skills, or links—no hard-coded text elsewhere.
+Everything the site says lives in one file, `src/content/cv.ts`. The sections read from it, so there is no second copy to keep in sync. The file is checked against a Zod schema when the site builds, so a missing field or a broken link fails the build instead of shipping a broken page. `CONTENT_NOTES.md` explains which section uses which field.
 
-## Getting started
+The site also generates its own Open Graph image (`/api/og`), JSON-LD structured data, a sitemap and `robots.txt`.
+
+## Running it locally
 
 ```bash
-nvm use
+nvm use        # Node version from .nvmrc
 pnpm install
 pnpm dev
 ```
 
-## Quality gates
+## Checks
 
-- `pnpm lint`
-- `pnpm typecheck`
-- `pnpm build`
-- `pnpm start` (runs the production build)
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+```
 
 ## Deployment
 
-The app uses `output: "standalone"` for Vercel-friendly deployments. No external services or databases are required.
+Deployed on Vercel from the `main` branch. The optional search-engine verification variables are listed in `.env.example`.
+
+## License
+
+The code is MIT licensed (see `LICENSE`). The text and images describe me and my work, so please don't reuse them as your own.
