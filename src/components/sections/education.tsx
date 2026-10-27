@@ -32,9 +32,6 @@ export function EducationSection() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">{edu.degree}</p>
-                  <p className="text-sm font-semibold text-foreground">
-                    Graduating {edu.expected_graduation}
-                  </p>
                 </CardHeader>
                 <CardContent className="flex-row flex-wrap gap-2">
                   {edu.relevant_courses.map((course) => (

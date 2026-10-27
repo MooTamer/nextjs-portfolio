@@ -33,8 +33,8 @@ const keywords = [
   "ERP",
   "MES",
   "Cairo",
-  "Sydney",
-  "Australia",
+  "Remote",
+  "Full-stack Developer",
 ];
 
 const ogImage = {
@@ -113,9 +113,9 @@ export const metadata: Metadata = {
   },
   verification,
   other: {
-    // Legacy geo hints — harmless, signal the page's target market (Sydney).
-    "geo.region": `${siteConfig.targetLocation.country}-${siteConfig.targetLocation.region}`,
-    "geo.placename": `${siteConfig.targetLocation.locality}, Australia`,
+    // Geo hints point at where Mohamed is based.
+    "geo.region": "EG-C",
+    "geo.placename": "Cairo, Egypt",
   },
 };
 

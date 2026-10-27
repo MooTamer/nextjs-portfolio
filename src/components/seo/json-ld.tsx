@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
  * derived from `cvData` so it can never drift from the visible content.
  *
  * Geo intent is honest: `homeLocation`/`address` = Cairo (current), while
- * `seeks` + `hasOccupation.occupationLocation` = Sydney (relocation target).
+ * `seeks` describes the roles he is open to (remote, any time zone).
  */
 
 const COMPANY_URLS: Record<string, string> = {
@@ -96,21 +96,20 @@ function buildGraph() {
       occupationLocation: [
         {
           "@type": "City",
-          name: `${siteConfig.targetLocation.locality}, Australia`,
+          name: `${siteConfig.homeLocation.locality}, Egypt`,
         },
       ],
       skills: knowsAbout.join(", "),
     },
     seeks: {
       "@type": "Demand",
-      name: "Software engineering roles in Sydney, Australia — open to relocation and visa sponsorship",
+      name: "Remote software engineering roles in any time zone; relocation considered",
       availableAtOrFrom: {
         "@type": "Place",
         address: {
           "@type": "PostalAddress",
-          addressLocality: siteConfig.targetLocation.locality,
-          addressRegion: siteConfig.targetLocation.region,
-          addressCountry: siteConfig.targetLocation.country,
+          addressLocality: siteConfig.homeLocation.locality,
+          addressCountry: siteConfig.homeLocation.country,
         },
       },
     },

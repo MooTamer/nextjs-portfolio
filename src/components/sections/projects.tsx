@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { cvData } from "@/content/cv";
 import { StaggerContainer, StaggerItem } from "@/components/shared/fade-in";
@@ -32,12 +32,12 @@ export function ProjectsSection() {
                     </div>
                     <Button asChild size="icon" variant="ghost" className="shrink-0">
                       <a
-                        href={project.repo}
+                        href={project.url}
                         target="_blank"
-                        aria-label={`${project.name} repository`}
+                        aria-label={`Open ${project.name}`}
                         rel="noreferrer"
                       >
-                        <Github className="h-4 w-4" />
+                        <ArrowUpRight className="h-4 w-4" />
                       </a>
                     </Button>
                   </div>
@@ -62,8 +62,8 @@ export function ProjectsSection() {
                     ))}
                   </ul>
                   <Button asChild variant="outline" size="sm" className="mt-auto w-fit">
-                    <a href={project.repo} target="_blank" rel="noreferrer">
-                      View repository
+                    <a href={project.url} target="_blank" rel="noreferrer">
+                      {project.link_label}
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
                   </Button>
